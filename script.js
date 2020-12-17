@@ -9,3 +9,23 @@ filtersButton.addEventListener('click', () => {
     filtersContainer.style.display = 'none';
   }
 })
+
+//FETCH API
+let idArr = [];
+
+for(j = 1; j < 210; j++){
+  let pageNum = 0;
+
+  fetch(`http://api.tvmaze.com/shows?page=${pageNum}`)
+  .then(res => {
+    return res.json()
+  })
+  .then(res => {
+    for(i = 0; i < res.length; i++) {
+      idArr.push((res[i].id))
+    }
+  })
+
+  pageNum = pageNum + 1;
+}
+

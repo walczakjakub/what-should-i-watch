@@ -35,7 +35,7 @@ h1 {
     min-height: 100px;
 }
 
-#searchBar {
+#search-bar {
     width: 90%;
     margin-top: 20px;
     height: 40px;
@@ -94,4 +94,21 @@ h1 {
     min-width: 110px;    
     border-radius: 10px;
     text-align: center;
+}
+
+/* RESULTS */
+#results {
+    margin: 5%;
+    max-width: 500px;
+}
+
+#results-list {
+    list-style: none;
+}
+
+#results-list li {
+    background-color: #EDF5E1;
+    margin-top: 10px;
+    padding: 10px 0 10px 10px;
+    border-radius: 10px;
 }

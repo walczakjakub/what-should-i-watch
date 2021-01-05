@@ -16,7 +16,7 @@ let idArr = [];
 for(j = 1; j < 210; j++){
   let pageNum = 0;
 
-  fetch(`http://api.tvmaze.com/shows?page=${pageNum}`)
+  fetch(`https://api.tvmaze.com/shows?page=${pageNum}`)
   .then(res => {
     return res.json()
   })
@@ -24,6 +24,9 @@ for(j = 1; j < 210; j++){
     for(i = 0; i < res.length; i++) {
       idArr.push((res[i].id))
     }
+  })
+  .catch(err => {
+    console.log('err');
   })
 
   pageNum = pageNum + 1;

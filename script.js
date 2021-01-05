@@ -47,6 +47,7 @@ searchBar.addEventListener('keyup', (e) => {
   })
 
   for(i = 0; i<10; i++){
+    if(typeof filteredShows[i] !== 'undefined'){
       const newListItem = document.createElement("li");
       newListItem.classList.add(`list-item-${i}`)
       resultsList.appendChild(newListItem);
@@ -54,5 +55,7 @@ searchBar.addEventListener('keyup', (e) => {
       newListItemName.innerHTML = filteredShows[i].name;
       const currentListItem = document.getElementsByClassName(`list-item-${i}`);
       currentListItem[0].appendChild(newListItemName);
+    }
+      
   }
 })

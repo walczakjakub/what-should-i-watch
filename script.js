@@ -37,14 +37,15 @@ for(j = 1; j < 210; j++){
 
 const searchBar = document.getElementById("search-bar");
 const resultsList = document.getElementById("results-list");
+let filteredShows = [];
 
 searchBar.addEventListener('keyup', (e) => {
   resultsList.textContent = '';
-  const searchValue = e.target.value;
-  const filteredShows = showAPI.filter( show => {
-    return show.name.includes(searchValue);
+  const searchValue = e.target.value.toLowerCase();
+  filteredShows = showAPI.filter( show => {
+    return show.name.toLowerCase().includes(searchValue);
   })
-  
+
   for(i = 0; i<10; i++){
       const newListItem = document.createElement("li");
       newListItem.classList.add(`list-item-${i}`)

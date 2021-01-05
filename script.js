@@ -45,7 +45,7 @@ searchBar.addEventListener('keyup', (e) => {
   filteredShows = showAPI.filter( show => {
     return show.name.toLowerCase().includes(searchValue);
   })
-  
+
   if(searchValue === ''){
     filteredShows = [];
   }
@@ -54,11 +54,20 @@ searchBar.addEventListener('keyup', (e) => {
     if(typeof filteredShows[i] !== 'undefined'){
       const newListItem = document.createElement("li");
       newListItem.classList.add(`list-item-${i}`)
-      resultsList.appendChild(newListItem);
-      const newListItemName = document.createElement("p");
-      newListItemName.innerHTML = filteredShows[i].name;
+      resultsList.appendChild(newListItem);      
       const currentListItem = document.getElementsByClassName(`list-item-${i}`);
+      
+      const newListItemName = document.createElement("h2");
+      newListItemName.innerHTML = filteredShows[i].name;
       currentListItem[0].appendChild(newListItemName);
+      const newListItemImg = document.createElement("img");
+      newListItemImg.src = filteredShows[i].image.original;
+      currentListItem[0].appendChild(newListItemImg);
+      const newListItemSummary = document.createElement('div');
+      newListItemSummary.classList.add('show-summary')
+      newListItemSummary.innerHTML = filteredShows[i].summary;
+      currentListItem[0].appendChild(newListItemSummary);
+      
     }
       
   }

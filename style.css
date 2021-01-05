@@ -14,7 +14,7 @@ body {
     max-width: 1000px;
     margin: auto;
     background-color: #5CDB95;
-    height: 100vh;
+    padding-bottom: 20px;
 }
 
 /* HEADER */
@@ -100,6 +100,7 @@ h1 {
 #results {
     margin: 5%;
     max-width: 500px;
+    background-color: #5CDB95
 }
 
 #results-list {
@@ -112,3 +113,14 @@ h1 {
     padding: 10px 0 10px 10px;
     border-radius: 10px;
 }
+
+h2 {
+    font-size: 1.2em;
+    display: block;
+}
+
+#results-list img {
+    height: 140px;
+    margin-top: 10px;    
+}
+

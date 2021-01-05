@@ -45,6 +45,10 @@ searchBar.addEventListener('keyup', (e) => {
   filteredShows = showAPI.filter( show => {
     return show.name.toLowerCase().includes(searchValue);
   })
+  
+  if(searchValue === ''){
+    filteredShows = [];
+  }
 
   for(i = 0; i<10; i++){
     if(typeof filteredShows[i] !== 'undefined'){

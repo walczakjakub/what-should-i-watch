@@ -39,6 +39,31 @@ const searchBar = document.getElementById("search-bar");
 const resultsList = document.getElementById("results-list");
 let filteredShows = [];
 
+function createDiv(el, className) {
+  const newElement = document.createElement(el);
+  newElement.classList.add(className);
+  return newElement;
+}
+
+function createResultDiv() {
+  const listItem = createDiv('li', 'list-item');
+  resultsList.appendChild(listItem);
+
+  const listItemTitle = createDiv('h2', 'list-item-title');
+  listItem.appendChild(listItemTitle);
+
+  const listItemInfo = createDiv('div', 'list-item-info');  
+  listItem.appendChild(listItemInfo);
+
+  const listItemImg = createDiv('img', 'list-item-img');  
+  listItemInfo.appendChild(listItemImg);
+
+  const listItemSummary = createDiv('p', 'list-item-summary');  
+  listItemInfo.appendChild(listItemSummary);
+  
+  return listItem;
+}
+
 searchBar.addEventListener('keyup', (e) => {
   resultsList.textContent = '';
   const searchValue = e.target.value.toLowerCase();
@@ -51,24 +76,16 @@ searchBar.addEventListener('keyup', (e) => {
   }
 
   for(i = 0; i<10; i++){
-    if(typeof filteredShows[i] !== 'undefined'){
-      const newListItem = document.createElement("li");
-      newListItem.classList.add(`list-item-${i}`)
-      resultsList.appendChild(newListItem);      
-      const currentListItem = document.getElementsByClassName(`list-item-${i}`);
-      
-      const newListItemName = document.createElement("h2");
-      newListItemName.innerHTML = filteredShows[i].name;
-      currentListItem[0].appendChild(newListItemName);
-      const newListItemImg = document.createElement("img");
-      newListItemImg.src = filteredShows[i].image.original;
-      currentListItem[0].appendChild(newListItemImg);
-      const newListItemSummary = document.createElement('div');
-      newListItemSummary.classList.add('show-summary')
-      newListItemSummary.innerHTML = filteredShows[i].summary;
-      currentListItem[0].appendChild(newListItemSummary);
-      
-    }
-      
+    if(typeof filteredShows[i] !== 'undefined') {
+      const newResult = createResultDiv();
+      const newResultTitle = newResult.getElementsByClassName('list-item-title');
+      newResultTitle[0].innerHTML = filteredShows[i].name;
+
+      const newResultImg = newResult.getElementsByClassName('list-item-img');
+      newResultImg[0].src = filteredShows[i].image.original;
+
+      const newResultSummary = newResult.getElementsByClassName('list-item-summary');
+      newResultSummary[0].innerHTML = filteredShows[i].summary;
+    }      
   }
 })

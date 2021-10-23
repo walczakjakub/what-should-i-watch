@@ -49,14 +49,17 @@ function createResultDiv() {
   const listItem = createDiv('li', 'list-item');
   resultsList.appendChild(listItem);
 
-  const listItemTitle = createDiv('h2', 'list-item-title');
-  listItem.appendChild(listItemTitle);
+  const listItemTitleDiv = createDiv('div', 'list-item-title-div');
+  listItem.appendChild(listItemTitleDiv);
 
   const listItemInfo = createDiv('div', 'list-item-info');  
   listItem.appendChild(listItemInfo);
 
   const listItemImg = createDiv('img', 'list-item-img');  
-  listItemInfo.appendChild(listItemImg);
+  listItemTitleDiv.appendChild(listItemImg);
+
+  const listItemTitle = createDiv('h2', 'list-item-title');
+  listItemTitleDiv.appendChild(listItemTitle);
 
   const listItemSummary = createDiv('p', 'list-item-summary');  
   listItemInfo.appendChild(listItemSummary);

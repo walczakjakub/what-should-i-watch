@@ -92,3 +92,30 @@ searchBar.addEventListener('keyup', (e) => {
     }      
   }
 })
+
+//RANDOM BUTTON
+
+const randomButton = document.getElementById('randomize')
+
+randomButton.addEventListener('click', (e => {
+  let listItemArray = document.querySelectorAll('li')
+
+  if (listItemArray.length > 0) {
+    listItemArray.forEach(el => {
+      el.remove();
+    });
+  }
+
+  let randomShowId = Math.round(Math.random() * 49173);
+  createResultDiv();
+  let randomDivImg = document.querySelector('.list-item-img');
+  let randomDivTitle = document.querySelector('.list-item-title');
+  let randomDivSummary = document.querySelector('.list-item-summary');
+
+  randomDivImg.src = showAPI[randomShowId].image.original;
+  randomDivTitle.innerHTML = showAPI[randomShowId].name;
+  randomDivSummary.innerHTML = showAPI[randomShowId].summary;
+
+  console.log(showAPI[randomShowId]);
+  
+}))

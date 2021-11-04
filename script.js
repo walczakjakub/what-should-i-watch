@@ -1,15 +1,3 @@
-//FILTERS DISPLAY
-const filtersButton = document.querySelector("#filters-button");
-const filtersContainer = document.querySelector("#filters-container");
-
-filtersButton.addEventListener('click', () => {
-  if(filtersContainer.style.display !== 'block') {
-    filtersContainer.style.display = 'block';
-  } else {
-    filtersContainer.style.display = 'none';
-  }
-})
-
 //FETCH API
 let showAPI = [];
 let pageNum = 0;
@@ -115,7 +103,10 @@ randomButton.addEventListener('click', (e => {
   randomDivImg.src = showAPI[randomShowId].image.original;
   randomDivTitle.innerHTML = showAPI[randomShowId].name;
   randomDivSummary.innerHTML = showAPI[randomShowId].summary;
-
-  console.log(showAPI[randomShowId]);
-  
 }))
+
+
+
+
+
+

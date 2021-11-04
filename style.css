@@ -69,33 +69,6 @@ h1 {
     cursor: pointer;
 }
 
-/* FILTERS */
-#filters-container {
-    display: none;
-}
-
-#filters {
-    margin-top: 20px;
-    padding: 10px;
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;    
-    max-width: 500px;
-    background-color: #379683;
-}
-
-.filters-select {
-    background-color: #05386b;
-    color: #EDF5E1;
-    border: none;    
-    box-shadow: 3px 3px;
-    margin: 10px;
-    height: 40px;
-    min-width: 110px;    
-    border-radius: 10px;
-    text-align: center;
-}
-
 /* RESULTS */
 #results {
     margin: 5%;
